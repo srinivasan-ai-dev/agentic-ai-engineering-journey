@@ -1,0 +1,8 @@
+Test	Result	Normal Range	Status
+Total Cholesterol	265 mg/dL	< 200 mg/dL	High
+LDL Cholesterol (Bad Cholesterol)	190 mg/dL	< 100 mg/dL	Very High
+HDL Cholesterol (Good Cholesterol)	38 mg/dL	> 40 mg/dL (men), > 50 mg/dL (women)	Low
+Triglycerides	220 mg/dL	< 150 mg/dL	High
+VLDL Cholesterol	44 mg/dL	5–40 mg/dL	Slightly High
+Non-HDL Cholesterol	227 mg/dL	< 130 mg/dL	High
+Cholesterol/HDL Ratio	7.0	< 5.0	High Risk
