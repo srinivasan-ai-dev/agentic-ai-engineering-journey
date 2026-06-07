@@ -11,10 +11,11 @@ llm = ChatGroq(model="qwen/qwen3-32b")
 
 # 2. Create a quick helper function to clean the AI's output
 def remove_think_tags(text):
-    """Removes the <think>...</think> blocks from the text."""
-    # This regex looks for <think>, anything in between, and </think>, then replaces it with nothing.
-    clean = re.sub(r'<think>.*?</think>', '', text, flags=re.DOTALL)
-    return clean.strip()
+    """Removes the <tool_call>...<tool_call> blocks from the text."""
+    # This regex looks for <tool_call>, anything in between, and </tool_call>, then replaces it with nothing.
+    clean = re.sub(r'<tool_call>.*?</tool_call>', '', text, flags=re.DOTALL) # re.DOTALL allows the .* to match newlines, so it can remove multi-line tool calls.
+    return clean.strip() # Remove any leading/trailing whitespace after cleaning
+
 
 # --- FRONTEND UI DESIGN ---
 st.title("🩸 Blood Work Analyzer & Diet Planner")
@@ -22,12 +23,12 @@ st.write("Paste your medical report below to get a 50-word summary and a tailore
 
 user_report = st.text_area("Blood Work Report:", height=200, placeholder="Paste the text here...")
 
-if st.button("Analyze Report"):
-    if user_report.strip() == "":
+if st.button("Analyze Report"):# When the user clicks the button, we start processing the input and generating the output.
+    if user_report.strip() == "":# Check if the input is empty or just whitespace
         st.error("Please enter a report first!")
     else:
-        with st.spinner("Analyzing data and generating diet plan..."):
-            
+        with st.spinner("Analyzing data and generating diet plan..."):# Show a spinner while the AI is working
+        #Everything indented under this line happens while that wheel is spinning on the screen.
             # Agent 1: Summarize
             prompt_1 = [
                 ("system", "You are a professional highly trained physician that gives accurate summary of blood work results in 50 words. You only answer the question asked and do not provide any additional information."),
@@ -39,7 +40,7 @@ if st.button("Analyze Report"):
             clean_summary = remove_think_tags(raw_summary.content)
             
             st.subheader("📋 Medical Summary")
-            st.info(clean_summary)
+            st.info(clean_summary)# Display the cleaned summary in an info box for better visibility
             
             # Agent 2: Diet Plan
             prompt_2 = [
@@ -52,4 +53,4 @@ if st.button("Analyze Report"):
             clean_diet_plan = remove_think_tags(raw_diet_plan.content)
             
             st.subheader("🥗 Recommended Indian Diet Plan")
-            st.success(clean_diet_plan)
+            st.success(clean_diet_plan)# Display the cleaned diet plan in a success box for better visibility
