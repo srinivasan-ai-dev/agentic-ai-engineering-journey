@@ -1,8 +1,8 @@
 # 🚀 Agentic AI Engineering Journey
 
-Welcome to my 30-day engineering journal. This repository documents my deep dive into building end-to-end Agentic AI systems, transitioning from foundational LLM calls to fully autonomous, multi-agent RAG architectures. 
+Welcome to my engineering journal. This repository documents my deep dive into building end-to-end Agentic AI systems, transitioning from foundational LLM calls to fully autonomous, multi-agent RAG architectures. 
 
-This journey follows the advanced Agentic AI frameworks taught by Codebasics, focusing on hands-on deployment over pure theory.
+This journey follows the advanced Agentic AI frameworks, focusing on hands-on deployment over pure theory.
 
 ## 📂 Project Architecture
 
