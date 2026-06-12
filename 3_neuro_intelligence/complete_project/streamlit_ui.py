@@ -8,7 +8,9 @@ from langchain_groq import ChatGroq
 # Load environment variables
 load_dotenv(find_dotenv())
 
-DB_DIR = "./vector_vault"
+# Dynamically locate the vector_vault folder relative to THIS script's location
+current_dir = os.path.dirname(os.path.abspath(__file__))
+DB_DIR = os.path.join(current_dir, "vector_vault")
 
 # Cache the vector database connection to prevent lag on every rerun
 @st.cache_resource
