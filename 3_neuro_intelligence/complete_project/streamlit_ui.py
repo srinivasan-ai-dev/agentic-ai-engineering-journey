@@ -72,8 +72,8 @@ def main():
                     "Your primary task is to answer the user's question using the provided textbook excerpts in the most easy and simple explanable way but be accurate.\n\n"
                     "Guidelines:\n"
                     "1. If the provided excerpts contain the answer, rely heavily on them and cite them implicitly.\n"
-                    "2. If the excerpts do not contain sufficient data, do not refuse the question. Instead, clearly state: 'While the specific textbook excerpts do not cover this fully, based on general neurobiology...' and then provide an accurate scientific answer using your baseline knowledge.\n"
-                    "3. Keep the explanation structured, academic, and Sukuna style."),
+                    "2. If the excerpts do not contain sufficient data, do not refuse the question. Instead, clearly state at the begining that: 'While the specific textbook excerpts do not cover this fully, based on general neurobiology...' and then provide an accurate scientific answer using your baseline knowledge.\n"
+                    "3. Keep the explanation structured, academic, and do not mention References and author names."),
             ("human", f"Question: {query}\n\nContext:\n" + "\n\n".join([d.page_content for d in docs]) + "\n\nProvide the neuroscience answer.")
         ]
 
