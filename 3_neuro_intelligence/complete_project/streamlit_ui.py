@@ -9,13 +9,19 @@ from langchain_groq import ChatGroq
 load_dotenv(find_dotenv())
 
 # Dynamically locate the vector_vault folder relative to THIS script's location
-current_dir = os.path.dirname(os.path.abspath(__file__))
-DB_DIR = os.path.join(current_dir, "vector_vault")
+# Get absolute path to the vector_vault directory
+SCRIPT_DIR = Path(__file__).parent.absolute()
+DB_DIR = SCRIPT_DIR / "vector_vault"
 
 # Cache the vector database connection to prevent lag on every rerun
 @st.cache_resource
 def load_vector_db():
     embedding_model = HuggingFaceEmbeddings(model_name="all-MiniLM-L6-v2")
+
+    if not DB_DIR.exists():
+        st.error(f"❌ Vector database not found at: {DB_DIR}")
+        st.stop()
+
     vector_db = Chroma(
         collection_name="neuro_textbook",
         embedding_function=embedding_model,
