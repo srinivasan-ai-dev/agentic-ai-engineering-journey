@@ -11,9 +11,9 @@ llm = ChatGroq(model="qwen/qwen3-32b")
 
 # 2. Create a quick helper function to clean the AI's output
 def remove_think_tags(text):
-    """Removes the <tool_call>...<tool_call> blocks from the text."""
+    """Removes the <think>...</think> blocks from the text."""
     # This regex looks for <tool_call>, anything in between, and </tool_call>, then replaces it with nothing.
-    clean = re.sub(r'<tool_call>.*?</tool_call>', '', text, flags=re.DOTALL) # re.DOTALL allows the .* to match newlines, so it can remove multi-line tool calls.
+    clean = re.sub(r'<think>.*?</think>', '', text, flags=re.DOTALL) # re.DOTALL allows the .* to match newlines, so it can remove multi-line tool calls.
     return clean.strip() # Remove any leading/trailing whitespace after cleaning
 
 
