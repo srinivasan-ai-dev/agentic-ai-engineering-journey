@@ -1,4 +1,5 @@
 import os
+from pathlib import Path
 import streamlit as st
 from dotenv import load_dotenv, find_dotenv
 from langchain_huggingface import HuggingFaceEmbeddings
