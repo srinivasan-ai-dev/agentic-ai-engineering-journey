@@ -1,4 +1,4 @@
-# 🚀 30 Days of Agentic AI Engineering
+# 🚀 Agentic AI Engineering Journey
 
 Welcome to my 30-day engineering journal. This repository documents my deep dive into building end-to-end Agentic AI systems, transitioning from foundational LLM calls to fully autonomous, multi-agent RAG architectures. 
 
