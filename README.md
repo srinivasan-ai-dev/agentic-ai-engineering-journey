@@ -13,6 +13,9 @@ This mono-repo contains a progression of increasingly complex AI applications:
 * Establishes basic prompt engineering pipelines and environment variable management.
 
 ### 2. Multi-Modal Blood Work Analyzer (`/2_blood_work_analysis`)
+
+**Live Demo:** (https://agentic-ai-engineering-journey-2.streamlit.app)
+
 * A full-stack AI application that processes medical reports.
 * Generates structured 50-word medical summaries and culturally tailored Indian dietary plans.
 * **Key Skills:** Streamlit UI, LangChain Prompts, Regex Output Parsing, Pydantic Structured Outputs.
