@@ -1,0 +1,9 @@
+langchain
+langchain-groq
+langchain-community
+yfinance
+duckduckgo-search
+xgboost
+pandas
+scikit-learn
+python-dotenv
