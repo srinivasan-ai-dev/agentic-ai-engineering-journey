@@ -36,6 +36,26 @@ This project is a Retrieval-Augmented Generation (RAG) pipeline designed to extr
 * To balance strict data grounding with user helpfulness, the LLM utilizes a Hybrid Knowledge Architecture. The system prioritizes fetching exact excerpts from the embedded textbook vault to prevent biological hallucination. If a query falls outside the bounds of the retrieved text, the inference engine executes a graceful fallback—blending the available context with baseline neurobiological consensus to deliver a complete, scientifically accurate response.
 ---
 
+
+### 4. 📈 Agentic Gold Predictor (Macro-Quant Pipeline)
+*(Folder: `/4_Agentic_Gold_predictor`)*
+
+**Architecture Overview**
+
+This project is a production-grade multi-agent MLOps pipeline designed to predict daily directional movements in Gold prices by synthesizing global macroeconomic indicators and geopolitical risk data. 
+
+* **Machine Learning Engine:** An XGBoost binary classifier trained on a 15-year historical matrix of market variables (DXY, WTI Oil, 10-Year Yields, VIX, and Geopolitical Risk indices).
+* **Data Ingestion Tools:** Custom Python tools built to dynamically fetch live market metrics (`yfinance`) and scrape macroeconomic news streams.
+* **Agentic Orchestration:** LangChain Expression Language (LCEL) routing that passes state variables between specialized AI nodes (a quantitative Sentiment Agent and an elite Reasoning Agent).
+* **Inference Engine:** Llama-3.1-8b (via Groq API) utilized for high-speed sentiment extraction and final report generation.
+
+**Design Paradigm: Explainable AI (XAI)**
+
+To bridge the gap between "black-box" machine learning and institutional reliability, this system separates mathematical forecasting from linguistic reasoning. The XGBoost model serves as the strict, deterministic "decision-maker," calculating the actual directional probability. The Master Reasoning Agent (prompted as a Chief Investment Officer) acts strictly as the "explainer," taking the ML output and live feature data to generate a cohesive, human-readable market intelligence brief without hallucinating the math.
+
+**Key Skills:** Multi-Agent Pipelines, LangChain LCEL, MLOps (Feature Normalization, Defensive Programming), XGBoost Hyperparameter Tuning, Quantitative Finance Concepts.
+
+
 ## 🛠️ The Tech Stack
 
 * **Core Language:** Python 3.x
