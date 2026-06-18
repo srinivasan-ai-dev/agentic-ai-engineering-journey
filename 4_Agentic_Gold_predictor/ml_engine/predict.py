@@ -7,10 +7,13 @@ Live inference for the agentic gold prediction pipeline.
 import joblib
 import numpy as np
 import pandas as pd
+from pathlib import Path
 
-MODEL_PATH    = "gold_direction_model.pkl"
-SCALER_PATH   = "scaler.pkl"
-FEATURES_PATH = "feature_columns.pkl"
+_DIR = Path(__file__).parent
+
+MODEL_PATH    = _DIR / "gold_direction_model.pkl"
+SCALER_PATH   = _DIR / "scaler.pkl"
+FEATURES_PATH = _DIR / "feature_columns.pkl"
 
 
 def predict_direction(today_prices: dict, groq_sentiment: float, price_history: pd.DataFrame = None) -> dict:

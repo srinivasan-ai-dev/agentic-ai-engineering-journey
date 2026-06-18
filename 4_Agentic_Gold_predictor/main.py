@@ -1,3 +1,7 @@
+import sys
+import io
+sys.stdout = io.TextIOWrapper(sys.stdout.buffer, encoding='utf-8', errors='replace')
+
 from dotenv import load_dotenv, find_dotenv
 load_dotenv(find_dotenv()) 
 # This loads the environment variables from a .env file located in the project directory. The find_dotenv() function helps locate the .env file regardless of where the script is run from, making it more flexible and portable. This allows us to securely store sensitive information like API keys without hardcoding them into our code.
@@ -5,6 +9,8 @@ load_dotenv(find_dotenv())
 from tools.search_api import fetch_macro_news
 from tools.market_api import fetch_live_metrics
 from agents.sentiment_node import analyze_news_sentiment
+from ml_engine.predict import predict_direction
+from agents.report_agent import generate_final_report
 
 state = {
     "market_data": {}, 
@@ -51,7 +57,36 @@ def execute_data_pipeline():
     print(f"   Sentiment Score: {state['sentiment_score']}\n")
     print(f"   Sentiment Rationale: {state['sentiment_rationale']}\n")
 
-    print("✅ Data pipeline execution complete.")
+    # Step 4: ML Prediction
+    # Map the market API output keys to the format expected by the ML predictor.
+    # The predictor expects keys like "gold", "oil", "dxy", "yield_10y" for current prices,
+    # and "gold_return", "oil_return", etc. for percentage changes (as decimals).
+    print("4. Running ML prediction model...")
+    market = state["market_data"]
+    today_prices = {
+        "gold":         market.get("gold_price", 0.0),
+        "oil":          market.get("oil_price", 0.0),
+        "dxy":          market.get("dxy_price", 0.0),
+        "yield_10y":    market.get("yield_price", 0.0),
+        "gold_return":  market.get("gold_change", 0.0) / 100,   # convert % to decimal
+        "oil_return":   market.get("oil_change", 0.0) / 100,
+        "dxy_return":   market.get("dxy_change", 0.0) / 100,
+        "yield_return": market.get("yield_change", 0.0) / 100,
+    }
+    state["ml_prediction"] = predict_direction(today_prices, state["sentiment_score"])
+    print(f"   Direction:  {state['ml_prediction']['direction']}")
+    print(f"   Confidence: {state['ml_prediction']['confidence']}\n")
+
+    # Step 5: Generate Final Report
+    # The report agent synthesizes market data, sentiment analysis, and ML prediction
+    # into a professional markdown intelligence brief.
+    print("5. Generating final intelligence report...\n")
+    state["final_report"] = generate_final_report(state)
+    print("=" * 60)
+    print(state["final_report"])
+    print("=" * 60)
+
+    print("\n[DONE] Data pipeline execution complete.")
 
     
 if __name__ == "__main__":
