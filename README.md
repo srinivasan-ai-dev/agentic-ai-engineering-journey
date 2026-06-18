@@ -38,7 +38,7 @@ This project is a Retrieval-Augmented Generation (RAG) pipeline designed to extr
 
 
 ### 4. 📈 Agentic Gold Predictor (Macro-Quant Pipeline)
-*(Folder: `/4_Agentic_Gold_predictor`)*
+**Live Demo:** (https://srinivasan-ai-dev.github.io/agentic-ai-engineering-journey/)
 
 **Architecture Overview**
 
