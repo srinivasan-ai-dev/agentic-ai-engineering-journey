@@ -16,7 +16,7 @@ function App() {
     setLoading(true)
     setError(null)
     try {
-      const res = await fetch('http://localhost:8000/api/analyze')
+      const res = await fetch('https://agentic-ai-engineering-journey.onrender.com/api/analyze')
       if (!res.ok) throw new Error(`API error: ${res.status}`)
       const result = await res.json()
       setData(result)
@@ -48,8 +48,8 @@ function App() {
           <div className="logo">
             <div className="logo-icon">
               <svg width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                <circle cx="12" cy="12" r="10"/>
-                <path d="M12 6v12M8 10l4-4 4 4M8 14l4 4 4-4"/>
+                <circle cx="12" cy="12" r="10" />
+                <path d="M12 6v12M8 10l4-4 4 4M8 14l4 4 4-4" />
               </svg>
             </div>
             <div>
@@ -77,7 +77,7 @@ function App() {
             ) : (
               <>
                 <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M22 12h-4l-3 9L9 3l-3 9H2"/>
+                  <path d="M22 12h-4l-3 9L9 3l-3 9H2" />
                 </svg>
                 Run Analysis
               </>
@@ -93,7 +93,7 @@ function App() {
       {error && (
         <div className="error-banner animate-fade-in-up">
           <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2">
-            <circle cx="12" cy="12" r="10"/><line x1="15" y1="9" x2="9" y2="15"/><line x1="9" y1="9" x2="15" y2="15"/>
+            <circle cx="12" cy="12" r="10" /><line x1="15" y1="9" x2="9" y2="15" /><line x1="9" y1="9" x2="15" y2="15" />
           </svg>
           {error}
         </div>
@@ -104,8 +104,8 @@ function App() {
         <div className="empty-state animate-fade-in-up">
           <div className="empty-icon">
             <svg width="64" height="64" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1" strokeLinecap="round" strokeLinejoin="round">
-              <circle cx="12" cy="12" r="10"/>
-              <path d="M12 6v12M8 10l4-4 4 4M8 14l4 4 4-4"/>
+              <circle cx="12" cy="12" r="10" />
+              <path d="M12 6v12M8 10l4-4 4 4M8 14l4 4 4-4" />
             </svg>
           </div>
           <h2>Ready to Analyze</h2>
