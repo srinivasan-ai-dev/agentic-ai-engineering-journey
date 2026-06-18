@@ -10,6 +10,9 @@ def analyze_news_sentiment(raw_news: list) -> dict:
     # Initialize the high-speed reasoning model
     llm = ChatGroq(model="llama-3.1-8b-instant", temperature=0.0)
     
+    if not raw_news:
+        return {"score": 0.0, "rationale": "Neutral sentiment due to no recent macroeconomic news signals found."}
+        
     # Format the input payload for the context window
     formatted_context = ""
     for idx, item in enumerate(raw_news):
