@@ -48,10 +48,13 @@ In quantitative finance, a 55% to 60% win rate is legendary. Wall Street firms l
 
 * **Machine Learning Engine:** An XGBoost binary classifier trained on a 15-year historical matrix of market variables (DXY, WTI Oil, 10-Year Yields, VIX, and Geopolitical Risk indices based on Top news headlines).
 * **Data Ingestion Tools:** Custom Python tools built to dynamically fetch live market metrics (`yfinance`) and scrape macroeconomic news streams.
+
 * **Agentic Orchestration:** LangChain Expression Language (LCEL) routing that passes state variables between specialized AI nodes (a quantitative Sentiment Agent and an elite Reasoning Agent).
 * **Inference Engine:** Llama-3.1-8b (via Groq API) utilized for high-speed sentiment extraction and final report generation.
 
-**Design Paradigm:  Explainable AI (XAI)**
+**Design Paradigm:  
+
+Explainable AI (XAI)**
 
 To bridge the gap between "black-box" machine learning and institutional reliability, this system separates mathematical forecasting from linguistic reasoning. The XGBoost model serves as the strict, deterministic "decision-maker," calculating the actual directional probability. The Master Reasoning Agent (prompted as a Chief Investment Officer) acts strictly as the "explainer," taking the ML output and live feature data to generate a cohesive, human-readable market intelligence brief without hallucinating the math.
 
