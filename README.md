@@ -49,7 +49,7 @@ This project is a production-grade multi-agent MLOps pipeline designed to predic
 * **Agentic Orchestration:** LangChain Expression Language (LCEL) routing that passes state variables between specialized AI nodes (a quantitative Sentiment Agent and an elite Reasoning Agent).
 * **Inference Engine:** Llama-3.1-8b (via Groq API) utilized for high-speed sentiment extraction and final report generation.
 
-**Design Paradigm: Explainable AI (XAI)**
+**Design Paradigm:  Explainable AI (XAI)**
 
 To bridge the gap between "black-box" machine learning and institutional reliability, this system separates mathematical forecasting from linguistic reasoning. The XGBoost model serves as the strict, deterministic "decision-maker," calculating the actual directional probability. The Master Reasoning Agent (prompted as a Chief Investment Officer) acts strictly as the "explainer," taking the ML output and live feature data to generate a cohesive, human-readable market intelligence brief without hallucinating the math.
 
