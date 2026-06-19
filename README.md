@@ -44,6 +44,8 @@ This project is a Retrieval-Augmented Generation (RAG) pipeline designed to extr
 
 This project is a production-grade multi-agent MLOps pipeline designed to predict daily directional movements in Gold prices by synthesizing global macroeconomic indicators and geopolitical risk data. 
 
+In quantitative finance, a 55% to 60% win rate is legendary. Wall Street firms like Renaissance Technologies became billionaires on a 51% directional edge because, when combined with strong risk management, it creates an absolute money-printing machine.
+
 * **Machine Learning Engine:** An XGBoost binary classifier trained on a 15-year historical matrix of market variables (DXY, WTI Oil, 10-Year Yields, VIX, and Geopolitical Risk indices based on Top news headlines).
 * **Data Ingestion Tools:** Custom Python tools built to dynamically fetch live market metrics (`yfinance`) and scrape macroeconomic news streams.
 * **Agentic Orchestration:** LangChain Expression Language (LCEL) routing that passes state variables between specialized AI nodes (a quantitative Sentiment Agent and an elite Reasoning Agent).
