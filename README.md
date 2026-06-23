@@ -9,6 +9,7 @@ This journey follows the advanced Agentic AI frameworks, focusing on hands-on de
 This mono-repo contains a progression of increasingly complex AI applications:
 
 ### 1. Simple LLM Calling (`/1_simple_llm_calling`)
+
 * The foundational setup for securely connecting to LLM APIs (Groq/Gemini).
 * Establishes basic prompt engineering pipelines and environment variable management.
 
