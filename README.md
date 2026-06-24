@@ -34,6 +34,7 @@ This project is a Retrieval-Augmented Generation (RAG) pipeline designed to extr
 
 ### Guardrails Implemented
 
+
 * To balance strict data grounding with user helpfulness, the LLM utilizes a Hybrid Knowledge Architecture. The system prioritizes fetching exact excerpts from the embedded textbook vault to prevent biological hallucination. If a query falls outside the bounds of the retrieved text, the inference engine executes a graceful fallback—blending the available context with baseline neurobiological consensus to deliver a complete, scientifically accurate response.
 ---
 
