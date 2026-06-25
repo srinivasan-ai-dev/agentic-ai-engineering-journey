@@ -43,7 +43,6 @@ This project is a Retrieval-Augmented Generation (RAG) pipeline designed to extr
 **Live Demo:** (https://srinivasan-ai-dev.github.io/agentic-ai-engineering-journey/)
 
 **Architecture Overview**
-
 This project is a production-grade multi-agent MLOps pipeline designed to predict daily directional movements in Gold prices by synthesizing global macroeconomic indicators and geopolitical risk data. 
 
 In quantitative finance, a 55% to 60% win rate is legendary. Wall Street firms like Renaissance Technologies became billionaires on a 51% directional edge because, when combined with strong risk management, it creates an absolute money-printing machine.
