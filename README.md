@@ -25,6 +25,7 @@ This mono-repo contains a progression of increasingly complex AI applications:
 
 **Live Demo:** (https://agentic-ai-engineering-journey.streamlit.app)
 
+
 ### Architecture Overview
 This project is a Retrieval-Augmented Generation (RAG) pipeline designed to extract highly technical neurobiology data from unstructured text. 
 * **Embedding Model:** `all-MiniLM-L6-v2` (HuggingFace) for dense vector representation.
